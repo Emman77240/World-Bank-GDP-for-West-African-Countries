@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}WestAF GDP: returns the GDP of five West African countries for any given year{% endblock %}
+
+{% block page_content %}
+
+ <div class="jumbotron text-center">
+    <h1>Welcome to WestAF GDP</h1>
+    <p class="lead">This application returns the <strong>Gross Domestic Product</strong> of five West AFrican States, in any given year.</p>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% endif %}
+ </div>
+{% endblock %}

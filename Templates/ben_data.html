@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Information Page: WestAF GDP{% endblock %}
+
+{% block page_content %}
+  <h2>Dear {{session.username}}</h2>
+  <hr>
+  <div>
+  <h3><small>It  appears  that  Benin Republic's  GDP  value  in  the  year <strong>{{data.Year}}</strong> was  <strong>${{data.DollarGDP}}</strong></small></h3>
+  </div>
+{% endblock %}
