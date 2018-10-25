@@ -1,11 +1,11 @@
 ## WestAF GDP
 Link to trello board: https://trello.com/b/eQ9DMJno/world-bank-gdp-web-app-returns-gdp-for-west-african-countries
 
-This application displays the GDP of five West African countries for any given year.
+This application displays the GDP of six West African countries from 1997 to 2017.
 The only data input required from the user is the year for which GDP is desired.
 
 ## How to run WestAF GDP
-After installing the necessary modules using pip, and saving the templates in their correct order, run the app by entering 'python yhello.py' in the command line. The app can be viewed afterwards at localhost port 5000(localhost:5000), along with its different views.
+After installing the necessary modules using pip in the command line, and saving the templates in their correct order, run the app by entering 'python yhello.py' in the command line. The app can be viewed afterwards at localhost port 5000(localhost:5000), along with its different views.
 
 ## Description to running the "Hello World" flask app;
 
