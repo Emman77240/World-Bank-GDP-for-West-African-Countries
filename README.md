@@ -9,6 +9,8 @@ After installing the necessary modules using pip in the command line, and saving
 
 ## Description to running the "Hello World" flask app;
 
+The python script is named hi.py and is located at the HelloWorld branch.
+
 - In the command line, start your virtual environment by typing 'venv\Scripts\activate'
 
 - Enter the folder with your python script. I named my python script 'hi.py'
