@@ -9,10 +9,9 @@
 # Licence:     <your licence>
 #------------------------------------------------------------------------------
 from flask_bootstrap import Bootstrap
-from flask_script import Manager
 from flask import Flask, render_template, session, redirect, url_for, flash, request, logging
 from flask_mysqldb import MySQL
-from wtforms import Form, StringField, TextAreaField, PasswordField, validators
+from wtforms import Form, StringField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
 
@@ -29,8 +28,6 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 bootstrap = Bootstrap(app)
-
-manager = Manager(app)
 
 @app.route('/')
 def home():
@@ -174,6 +171,9 @@ def nigeria_year():
             flash('Invalid Year Input', 'danger')
             return render_template('nigeria_year.html', form=form)
 
+        # Close connection
+        cur.close()
+
     else:
         return render_template('nigeria_year.html', form=form)
 
@@ -190,6 +190,8 @@ def nigeria_data(year):
 
     return render_template('nigeria_data.html', data=data)
 
+    # Close connection
+    cur.close()
 
 # Form input for Senegal
 @app.route('/senegal_year', methods=['GET','POST'])
@@ -216,6 +218,9 @@ def senegal_year():
             flash('Invalid Year Input', 'danger')
             return render_template('senegal_year.html', form=form)
 
+        # Close connection
+        cur.close()
+
     else:
         return render_template('senegal_year.html', form=form)
 
@@ -231,6 +236,9 @@ def senegal_data(year):
     data = cur.fetchone()
 
     return render_template('senegal_data.html', data=data)
+
+    # Close connection
+    cur.close()
 
 # Form input for Ghana
 @app.route('/ghana_year', methods=['GET','POST'])
@@ -257,6 +265,9 @@ def ghana_year():
             flash('Invalid Year Input', 'danger')
             return render_template('ghana_year.html', form=form)
 
+        # Close connection
+        cur.close()
+
     else:
         return render_template('ghana_year.html', form=form)
 
@@ -272,6 +283,9 @@ def ghana_data(year):
     data = cur.fetchone()
 
     return render_template('ghana_data.html', data=data)
+
+    # Close connection
+    cur.close()
 
 # Form input for Cote d'Ivoire
 @app.route('/civ_year', methods=['GET','POST'])
@@ -298,6 +312,9 @@ def civ_year():
             flash('Invalid Year Input', 'danger')
             return render_template('civ_year.html', form=form)
 
+        # Close connection
+        cur.close()
+
     else:
         return render_template('civ_year.html', form=form)
 
@@ -313,6 +330,9 @@ def civ_data(year):
     data = cur.fetchone()
 
     return render_template('civ_data.html', data=data)
+
+    # Close connection
+    cur.close()
 
 # Form input for Burkina Faso
 @app.route('/bfa_year', methods=['GET','POST'])
@@ -339,6 +359,9 @@ def bfa_year():
             flash('Invalid Year Input', 'danger')
             return render_template('bfa_year.html', form=form)
 
+        # Close connection
+        cur.close()
+
     else:
         return render_template('bfa_year.html', form=form)
 
@@ -354,6 +377,9 @@ def bfa_data(year):
     data = cur.fetchone()
 
     return render_template('bfa_data.html', data=data)
+
+    # Close connection
+    cur.close()
 
 # Form input for Benin Republic
 @app.route('/ben_year', methods=['GET','POST'])
@@ -380,6 +406,9 @@ def ben_year():
             flash('Invalid Year Input', 'danger')
             return render_template('ben_year.html', form=form)
 
+        # Close connection
+        cur.close()
+
     else:
         return render_template('ben_year.html', form=form)
 
@@ -396,16 +425,13 @@ def ben_data(year):
 
     return render_template('ben_data.html', data=data)
 
+    # Close connection
+    cur.close()
+
 
 if __name__ == '__main__':
     app.secret_key='hardtotellsecret5891'
     app.run(debug=True)
 
-manager = Manager(app)
 
-# ...
-
-if __name__ == '__main__':
-    manager.run()
-# ...
 
