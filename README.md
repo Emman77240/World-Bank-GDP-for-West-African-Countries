@@ -33,4 +33,3 @@ iii. Bootstrap
 
 iv.  HTML/CSS
 
-v.   Travis CI/Unittesting
